@@ -1,6 +1,16 @@
+import './App.css';
+
 function App() {
-    return ( 
-        <h1> The1LookingFor</h1>
+    return (
+        <main className="container">
+            <h2>
+                <p className="label">The1LookingFor</p>
+            </h2>
+            <h1 className="heading">
+                We hire people for their thinking, not their history
+            </h1>
+        </main>
     );
 }
+
 export default App;
