@@ -5,7 +5,8 @@
 body {
     margin: 0;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
-    background-color: #e78383;
+    background: linear-gradient(135deg, #7604f9, #be87fd, #dcc8f3);
+    color: #333;
 }
 
 #box {
@@ -13,6 +14,7 @@ body {
 }
 
 .container {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,18 +22,63 @@ body {
     min-height: 100vh;
     padding: 24px;
     text-align: center;
+    gap: 16px;
 }
 
 .heading {
     margin: 0;
-    font-size: 32px;
-    line-height: 1.2;
+    font-size: clamp(24px, 5vw, 28px);
+    line-height: 1.5;
     max-width: 700px;
     color: #010101;
 }
 
+.description {
+    margin: 0;
+    font-size: 20px;
+    line-height: 1.5;
+    max-width: 700px;
+    color: #030202;
+}
+
+.button1:hover {
+    transform: scale(1.05);
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+    background-color: #010101;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.button1 {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #060606;
+    background-color: #fcf9f9;
+    border: none;
+    border-radius: 5px;
+}
 .label {
-    margin: 0 0 12px;
+    margin: 0;
     font-weight: 700;
     color: #010101;
+}
+
+.benifits {
+    margin: 8px 0 0;
+    text-align: left;
+    width: min(100%, 700px);
+}
+
+.benifits h2,
+.benifits ul {
+    margin: 0;
+}
+
+.benifits ul {
+    padding-left: 20px;
+    margin-top: 12px;
 }
