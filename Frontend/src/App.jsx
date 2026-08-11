@@ -9,7 +9,6 @@ function App() {
             <h2 className="heading">
                 We hire people for their thinking, not their history 
             </h2>
-            
             <button className="button1">
                 Join "The1LookingFor" 
             </button>

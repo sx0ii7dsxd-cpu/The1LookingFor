@@ -1,12 +1,26 @@
+:root {
+    --primary: #17e88f;
+    --primary-strong: #0da7ff;
+    --background: #07111d;
+    --panel: rgba(13, 23, 37, 0.72);
+    --text: #f5fbff;
+    --muted: #94a8bf;
+    --border: rgba(134, 167, 208, 0.18);
+    --shadow: 0 28px 90px rgba(0, 0, 0, 0.35);
+}
+
 * {
     box-sizing: border-box;
 }
 
 body {
     margin: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
-    background: linear-gradient(135deg, #7604f9, #be87fd, #dcc8f3);
-    color: #333;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(23, 232, 143, 0.18), transparent 20%),
+        radial-gradient(circle at 86% 16%, rgba(13, 167, 255, 0.18), transparent 24%),
+        linear-gradient(160deg, #040a12 0%, #081321 42%, #0d1830 100%);
+    color: var(--text);
 }
 
 #box {
@@ -14,63 +28,110 @@ body {
 }
 
 .container {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     min-height: 100vh;
-    padding: 24px;
-    text-align: center;
-    gap: 16px;
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 88px 32px 72px;
+    text-align: left;
+    gap: 24px;
+}
+
+.container::after {
+    content: '';
+    position: absolute;
+    top: 74px;
+    right: 32px;
+    width: min(34vw, 390px);
+    height: min(34vw, 390px);
+    background:
+        radial-gradient(circle at 35% 35%, rgba(23, 232, 143, 0.34), transparent 38%),
+        radial-gradient(circle at 68% 62%, rgba(13, 167, 255, 0.3), transparent 42%);
+    filter: blur(16px);
+    opacity: 0.95;
+    z-index: -1;
 }
 
 .heading {
     margin: 0;
-    font-size: clamp(24px, 5vw, 28px);
-    line-height: 1.5;
-    max-width: 700px;
-    color: #010101;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: clamp(3.2rem, 7vw, 6.2rem);
+    line-height: 0.95;
+    letter-spacing: -0.05em;
+    max-width: 9ch;
+    color: var(--text);
+    text-wrap: balance;
+    text-transform: none;
+    text-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
 }
 
 .description {
     margin: 0;
-    font-size: 20px;
-    line-height: 1.5;
-    max-width: 700px;
-    color: #030202;
+    font-size: clamp(1rem, 1.45vw, 1.15rem);
+    line-height: 1.8;
+    max-width: 56ch;
+    color: var(--muted);
+    text-wrap: pretty;
 }
 
 .button1:hover {
-    transform: scale(1.05);
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
-    background-color: #010101;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+    transform: translate(-4px, -4px);
+    box-shadow: 10px 10px 0 #101010;
 }
+
 .button1 {
-    padding: 10px 20px;
-    font-size: 16px;
+    padding: 15px 24px;
+    font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+    font-size: 0.98rem;
     font-weight: 700;
-    color: #060606;
-    background-color: #fcf9f9;
-    border: none;
-    border-radius: 5px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text);
+    background: linear-gradient(135deg, var(--primary), #baffdd);
+    border: 2px solid #101010;
+    border-radius: 0;
+    box-shadow: 6px 6px 0 #101010;
+    cursor: pointer;
+    transition:
+        transform 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
 }
+
+.button1:focus-visible {
+    outline: 2px solid rgba(0, 184, 255, 0.95);
+    outline-offset: 4px;
+}
+
 .label {
     margin: 0;
+    font-size: 0.8rem;
     font-weight: 700;
-    color: #010101;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #83efc0;
+    background: rgba(23, 232, 143, 0.1);
+    padding: 10px 14px;
+    border: 1px solid rgba(23, 232, 143, 0.16);
+    border-radius: 999px;
 }
 
 .benifits {
     margin: 8px 0 0;
     text-align: left;
-    width: min(100%, 700px);
+    width: min(100%, 680px);
+    padding: 24px 26px;
+    border-radius: 26px;
+    background:
+        linear-gradient(135deg, rgba(23, 232, 143, 0.08), rgba(13, 167, 255, 0.06)),
+        var(--panel);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    backdrop-filter: blur(10px);
 }
 
 .benifits h2,
@@ -79,6 +140,87 @@ body {
 }
 
 .benifits ul {
-    padding-left: 20px;
-    margin-top: 12px;
+    padding-left: 24px;
+    margin-top: 14px;
+    color: var(--muted);
+    line-height: 1.75;
+}
+
+.benifits h2 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-transform: none;
+}
+
+.benifits li::marker {
+    color: var(--primary);
+}
+
+.benifits li + li {
+    margin-top: 6px;
+}
+
+.container > * {
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 900px) {
+    .container {
+        display: grid;
+        grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+        grid-template-areas:
+            'label benefits'
+            'heading benefits'
+            'button benefits'
+            'description benefits';
+        align-items: center;
+        column-gap: 72px;
+        row-gap: 18px;
+    }
+
+    .label {
+        grid-area: label;
+        justify-self: start;
+    }
+
+    .heading {
+        grid-area: heading;
+    }
+
+    .button1 {
+        grid-area: button;
+        justify-self: start;
+    }
+
+    .description {
+        grid-area: description;
+    }
+
+    .benifits {
+        grid-area: benefits;
+        align-self: center;
+        margin: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 34px 18px 42px;
+        gap: 18px;
+    }
+
+    .container::after {
+        top: auto;
+        bottom: 36px;
+        right: 10px;
+        width: 140px;
+        height: 140px;
+    }
+
+    .benifits {
+        padding: 18px 18px 18px 20px;
+    }
 }
