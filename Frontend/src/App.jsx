@@ -7,7 +7,7 @@ function App() {
                 The1LookingFor
             </h2>
             <h2 className="heading">
-                We hire people for their thinking, not their history 
+                We hire people for their THINKING, not their HISTORY
             </h2>
             <button className="button1">
                 Join "The1LookingFor" 
