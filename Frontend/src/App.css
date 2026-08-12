@@ -19,6 +19,8 @@ body {
     background: 
         radial-gradient(circle at 10% 18%, rgba(23, 232, 143, 0.18), transparent 20%),
         radial-gradient(circle at 86% 16%, rgba(13, 167, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 75% 75%, rgba(23, 232, 143, 0.08), transparent 38%),
+        radial-gradient(circle at 20% 75%, rgba(13, 167, 255, 0.08), transparent 38%),
         linear-gradient(160deg, #040a12 0%, #081321 42%, #0d1830 100%);
     color: var(--text);
 }
@@ -115,8 +117,7 @@ body {
     color: #ffffff;
     background: rgba(23, 232, 143, 0.1);
     padding: 10px 14px;
-    border: 1px solid rgba(23, 232, 143, 0.16);
-    border-radius: 999px;
+    border: 1px solid rgb(63, 64, 63);
 }
 
 .benifits {
@@ -165,6 +166,146 @@ body {
     position: relative;
     z-index: 1;
 }
+.working {
+    position: relative;
+    width: 100%;
+    margin-top: 56px;
+    padding: 96px 0 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+    text-align: center;
+}
+
+.working::before {
+    content: '';
+    position: absolute;
+    inset: 24px 16% auto;
+    height: 240px;
+    background:
+        radial-gradient(circle at 50% 50%, rgba(23, 232, 143, 0.08), transparent 58%),
+        radial-gradient(circle at 72% 38%, rgba(13, 167, 255, 0.06), transparent 48%);
+    filter: blur(28px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section-label,
+.section-heading,
+.section-copy,
+.steps-grid {
+    position: relative;
+    z-index: 1;
+}
+
+.section-label {
+    margin: 0;
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+}
+
+.section-heading {
+    margin: 0;
+    max-width: 14ch;
+    font-size: clamp(2rem, 4vw, 3.35rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    text-wrap: balance;
+}
+
+.section-copy {
+    margin: 0 0 18px;
+    max-width: 60ch;
+    font-size: clamp(0.98rem, 1.35vw, 1.08rem);
+    line-height: 1.75;
+    color: var(--muted);
+    text-wrap: pretty;
+}
+
+.steps-grid {
+    position: relative;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.steps-grid::before {
+    content: '';
+    position: absolute;
+    top: 34px;
+    left: 16.66%;
+    right: 16.66%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(134, 167, 208, 0.32) 14%, rgba(134, 167, 208, 0.32) 86%, transparent);
+    z-index: 0;
+}
+
+.step-card {
+    position: relative;
+    min-height: 228px;
+    padding: 28px 24px 26px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    border: 1px solid rgba(134, 167, 208, 0.2);
+    border-radius: 18px;
+    background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.02)),
+        rgba(9, 18, 30, 0.72);
+    backdrop-filter: blur(10px);
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+    z-index: 1;
+}
+
+.step-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(23, 232, 143, 0.34);
+    background:
+        linear-gradient(180deg, rgba(23, 232, 143, 0.05), rgba(255, 255, 255, 0.025)),
+        rgba(9, 18, 30, 0.78);
+}
+
+.step-number {
+    width: 42px;
+    height: 42px;
+    margin-bottom: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 999px;
+    border: 1px solid rgba(134, 167, 208, 0.24);
+    background: rgba(255, 255, 255, 0.03);
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.step-title {
+    margin: 0 0 12px;
+    max-width: 12ch;
+    font-size: 1.3rem;
+    line-height: 1.25;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    text-wrap: balance;
+}
+
+.step-copy {
+    margin: 0;
+    font-size: 0.98rem;
+    line-height: 1.68;
+    color: var(--muted);
+}
+
 
 @media (min-width: 900px) {
     .container {
@@ -204,6 +345,24 @@ body {
         align-self: center;
         margin: 0;
     }
+
+    .working {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 900px) {
+    .working {
+        padding: 84px 0 28px;
+    }
+
+    .steps-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .steps-grid::before {
+        display: none;
+    }
 }
 
 @media (max-width: 640px) {
@@ -226,5 +385,33 @@ body {
 
     .heading {
         max-width: 11ch;
+    }
+
+    .working {
+        margin-top: 28px;
+        padding: 64px 0 12px;
+        gap: 14px;
+    }
+
+    .section-heading {
+        font-size: 2rem;
+    }
+
+    .section-copy {
+        margin-bottom: 8px;
+    }
+
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .step-card {
+        min-height: auto;
+        padding: 24px 20px;
+    }
+
+    .step-title {
+        max-width: none;
     }
 }
