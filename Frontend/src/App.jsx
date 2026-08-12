@@ -42,7 +42,7 @@ function App() {
                     </article>
                     <article className="step-card">
                         <span className="step-number">03</span>
-                        <h3 className="step-title">Get discovered through your skills</h3>
+                        <h3 className="step-title">Get discovered</h3>
                         <p className="step-copy">Let employers find you for what you can do, not just what is written on a resume.</p>
                     </article>
                 </div>

@@ -18,7 +18,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: 
         radial-gradient(circle at 10% 18%, rgba(23, 232, 143, 0.18), transparent 20%),
-        radial-gradient(circle at 86% 16%, rgba(13, 167, 255, 0.18), transparent 24%),
+        radial-gradient(circle at 86% 16%, rgb(13, 167, 255, 0.18), transparent 24%),
         radial-gradient(circle at 75% 75%, rgba(23, 232, 143, 0.08), transparent 38%),
         radial-gradient(circle at 20% 75%, rgba(13, 167, 255, 0.08), transparent 38%),
         linear-gradient(160deg, #040a12 0%, #081321 42%, #0d1830 100%);
@@ -51,7 +51,7 @@ body {
     width: min(34vw, 390px);
     height: min(34vw, 390px);
     background:
-        radial-gradient(circle at 35% 35%, rgba(23, 232, 143, 0.34), transparent 38%),
+        radial-gradient(circle at 35% 35%, rgb(23, 232, 143, 0.34), transparent 38%),
         radial-gradient(circle at 68% 62%, rgba(13, 167, 255, 0.3), transparent 42%);
     filter: blur(16px);
     opacity: 0.95;
@@ -132,7 +132,17 @@ body {
     border: 1px solid var(--border);
     box-shadow: var(--shadow);
     backdrop-filter: blur(10px);
+    transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
 }
+
+.benifits:hover {
+    transform: translateY(-2px);
+    border-color: rgba(23, 232, 143, 0.34);
+    background:
+        linear-gradient(180deg, rgba(23, 232, 143, 0.05), rgba(255, 255, 255, 0.025)),
+        rgba(9, 18, 30, 0.78);
+}
+
 
 .benifits h2,
 .benifits ul {
@@ -202,18 +212,17 @@ body {
 .section-label {
     margin: 0;
     color: var(--primary);
-    font-size: 0.78rem;
+    font-size: 1rem;
     font-weight: 800;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
 }
 
 .section-heading {
     margin: 0;
-    max-width: 14ch;
     font-size: clamp(2rem, 4vw, 3.35rem);
     line-height: 1.08;
-    letter-spacing: -0.03em;
+    letter-spacing: 0.02em;
     color: var(--text);
     text-wrap: balance;
 }
