@@ -315,6 +315,84 @@ body {
     color: var(--muted);
 }
 
+.why-join {
+    position: relative;
+    width: 100%;
+    padding: 72px 0 40px;
+    margin-top: 56px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(320px, 0.9fr);
+    gap: 72px;
+    align-items: center;
+}
+
+.why-join h2 {
+    grid-column: 1 / -1;
+    margin: 0;
+    color: var(--text);
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: 0.03em;
+}
+
+.why-heading {
+    grid-column: 1 / -1;
+    margin: -48px 0 0;
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.why-grid {
+    grid-column: 1;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.why-card {
+    position: relative;
+    padding: 26px 0;
+    border-top: 1px solid var(--border);
+}
+
+.why-card:last-child {
+    border-bottom: 1px solid var(--border);
+}
+
+.why-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: var(--primary);
+    transition: height 180ms ease;
+}
+
+.why-card:hover::before {
+    height: 100%;
+}
+
+.why-card h3 {
+    margin: 0 0 10px;
+    padding-left: 18px;
+    color: var(--text);
+    font-size: 1.15rem;
+    line-height: 1.3;
+}
+
+.why-card p {
+    margin: 0;
+    padding-left: 18px;
+    max-width: 52ch;
+    color: var(--muted);
+    font-size: 0.98rem;
+    line-height: 1.65;
+}
+
+
 
 @media (min-width: 900px) {
     .container {

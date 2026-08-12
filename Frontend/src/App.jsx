@@ -57,7 +57,7 @@ function App() {
       </section>
       <section className=" why-join">
         <h2>Why The1LookingFor?</h2>
-        <p className="why-heading">Your skills should speak for themselves </p>
+        <p className="why-heading">No degree. No resume. Just proof.</p>
         <div className="why-grid">
           <div className=" why-card">
             <h3> No resume Requried</h3>
