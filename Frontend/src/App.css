@@ -16,7 +16,7 @@
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: 
+    background:
         radial-gradient(circle at 10% 18%, rgba(23, 232, 143, 0.18), transparent 20%),
         radial-gradient(circle at 86% 16%, rgb(13, 167, 255, 0.18), transparent 24%),
         radial-gradient(circle at 75% 75%, rgba(23, 232, 143, 0.08), transparent 38%),
@@ -93,7 +93,7 @@ body {
     text-transform: uppercase;
     color: var(--text);
     background: linear-gradient(135deg, var(--primary), #030303);
-   
+
     border-radius: 0;
     box-shadow: linear-gradient(135deg, var(--primary), #030303);
     cursor: pointer;
@@ -168,14 +168,15 @@ body {
     color: var(--primary);
 }
 
-.benifits li + li {
+.benifits li+li {
     margin-top: 6px;
 }
 
-.container > * {
+.container>* {
     position: relative;
     z-index: 1;
 }
+
 .working {
     position: relative;
     width: 100%;
@@ -317,24 +318,18 @@ body {
 
 .why-section {
     position: relative;
-    width: 100%;
-    margin-top: 56px;
-    padding: 96px 0 40px;
-    max-width: 1180px;
-    margin-left: auto;
-    margin-right: auto;
+    width: min(1180px, calc(100% - 64px));
+    margin: 100px auto 0;
+    padding: 110px 0 90px;
 }
 
-.why-section-label,
-.why-section-title,
-.why-section-content {
-    position: relative;
-    z-index: 1;
+.why-section-header {
+    width: 100%;
+    text-align: center;
 }
 
 .why-section-label {
     margin: 0;
-    text-align: center;
     color: var(--primary);
     font-size: 1rem;
     font-weight: 800;
@@ -344,22 +339,22 @@ body {
 
 .why-section-title {
     margin: 18px auto 0;
-    max-width: 12ch;
-    text-align: center;
+    max-width: 900px;
     color: var(--text);
-    font-size: clamp(2rem, 4vw, 3.35rem);
-    line-height: 1.08;
-    letter-spacing: 0.02em;
+    font-size: clamp(2.8rem, 5vw, 4.5rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+    text-align: center;
     text-wrap: balance;
 }
 
 .why-section-content {
-    margin-top: 52px;
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 52px;
-    align-items: start;
     width: 100%;
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: 100px;
+    align-items: stretch;
 }
 
 .why-section-list {
@@ -368,9 +363,12 @@ body {
 }
 
 .why-item {
-    padding: 28px 0 26px;
+    position: relative;
+    padding: 30px 0 32px;
     border-top: 1px solid var(--border);
-    transition: transform 180ms ease, border-color 180ms ease;
+    transition:
+        transform 180ms ease,
+        border-color 180ms ease;
 }
 
 .why-item:last-child {
@@ -378,39 +376,51 @@ body {
 }
 
 .why-item:hover {
-    transform: translateX(4px);
+    transform: translateX(5px);
     border-color: rgba(23, 232, 143, 0.34);
 }
 
 .why-item-number {
-    display: inline-block;
-    margin-bottom: 14px;
+    display: block;
+    margin-bottom: 18px;
     color: var(--primary);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     font-weight: 800;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    letter-spacing: 0.14em;
 }
 
 .why-item h3 {
-    margin: 0 0 10px;
+    margin: 0 0 12px;
     color: var(--text);
-    font-size: 1.3rem;
+    font-size: 1.35rem;
     line-height: 1.25;
-    letter-spacing: -0.02em;
-    text-wrap: balance;
+    letter-spacing: -0.025em;
 }
 
 .why-item p {
     margin: 0;
-    max-width: 44ch;
+    max-width: 46ch;
     color: var(--muted);
-    font-size: 0.98rem;
-    line-height: 1.68;
+    font-size: 1rem;
+    line-height: 1.7;
 }
 
 .why-section-visual {
+    position: relative;
     width: 100%;
+    min-height: 520px;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    background:
+        radial-gradient(circle at 30% 35%,
+            rgba(23, 232, 143, 0.08),
+            transparent 38%),
+
+        radial-gradient(circle at 75% 65%,
+            rgba(13, 167, 255, 0.08),
+            transparent 42%),
+        rgba(9, 18, 30, 0.35);
+    overflow: hidden;
 }
 
 @media (max-width: 900px) {
@@ -430,15 +440,12 @@ body {
         margin-top: 40px;
         padding: 48px 0 16px;
     }
-
     .why-section-title {
         font-size: 2rem;
     }
-
     .why-item {
         padding: 22px 0;
     }
-
     .why-section-content {
         margin-top: 28px;
         gap: 24px;

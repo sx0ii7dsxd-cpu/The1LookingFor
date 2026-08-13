@@ -56,41 +56,45 @@ function App() {
         </div>
       </section>
       <section className="why-section">
-        <p className="why-section-label">WHY THE1LOOKINGFOR</p>
-        <h2 className="why-section-title">No degree. No resume. Just proof.</h2>
-        <div className="why-section-content">
-          <div className="why-section-list">
-            <div className="why-item">
-              <span className="why-item-number">01</span>
-              <h3>No Resume Required</h3>
-              <p>
-                Your abilities matter more than your background. We focus on
-                what you can do, not what you've done in the past.
-              </p>
-            </div>
+        <div className = "why-section-header">
+          <p className = " why-section-label">
+            WHY THE1LOOKINGFOR
+            </p>
 
-            <div className="why-item">
-              <span className="why-item-number">02</span>
-              <h3>Real Skills. Real Proof.</h3>
-              <p>
-                Show what you can actually do through practical challenges and
-                projects that demonstrate your expertise.
-              </p>
-            </div>
-
-            <div className="why-item">
-              <span className="why-item-number">03</span>
-              <h3>Get Seen by the Right People</h3>
-              <p>
-                Let your skills create opportunities by helping companies
-                discover what you can actually bring to the table.
-              </p>
-            </div>
+            <h2 className = "why-section-title">
+              No Degree. No Resume. Just Proof.
+            </h2>
           </div>
 
-          <div className="why-section-visual" aria-hidden="true"></div>
-        </div>
+          <div className = " why-section-content">
+            <div className =" why-section-list"> 
+              <div className = " why-section-list">
+                <span className = " why-item-number"> 01 </span>
+
+                <h3> No Resume Required</h3>
+
+                <p>
+                  Your abilities matter mroe than your background.
+                  We focus on what you can do, not what you've done in the past. 
+                </p>
+              </div>
+              <div className = " why-item">
+                <span className = " why-item-number">02</span>
+                <h3> 
+                  Get seen by the Right People
+                </h3>
+                  <p>Let your skills create opportunities by helping compaines
+                    discover what you can bring to the table.</p>
+              </div>
+            </div>
+            <div className = " why-section-visual"> 
+
+            </div>
+
+          </div>
+
       </section>
+
     </main>
   );
 }
