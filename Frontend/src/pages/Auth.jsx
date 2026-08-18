@@ -7,7 +7,6 @@ function Auth() {
 
   return (
     <div className="auth-page-wrapper">
-      {/* Matching Header */}
       <header className="auth-site-header">
         <div className="auth-site-header-inner">
           <a href="/" className="auth-site-logo">
@@ -49,7 +48,6 @@ function Auth() {
         </div>
       </header>
 
-      {/* Main Auth Section */}
       <main className="auth-main-content">
         <div className="auth-container">
           <div className="auth-header">
@@ -109,7 +107,7 @@ function Auth() {
         </div>
       </main>
 
-      {/* Matching Footer */}
+
       <footer className="auth-site-footer">
         <div className="auth-site-footer-inner">
           <div className="auth-site-footer-top">
