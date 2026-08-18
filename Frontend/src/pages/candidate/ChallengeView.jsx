@@ -81,8 +81,8 @@ public class ApiSolution {
             {submitted && (
               <div className="submission-banner">
                 <h4>✓ Challenge Solution Submitted!</h4>
-                <p>Your solution has been evaluated. Your Skill DNA matrix score has been updated.</p>
-                <a href="/candidate/skill-dna" className="text-link">View Updated Skill DNA Matrix &rarr;</a>
+                <p>Your solution has been submitted for evaluation.</p>
+                <a href="/candidate/skill-dna" className="text-link">View Skill DNA Record &rarr;</a>
               </div>
             )}
           </article>

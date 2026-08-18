@@ -11,6 +11,8 @@ function Profile() {
     return <CandidateProfile />;
   }
 
+  const hasProfile = Boolean(auth.user?.name);
+
   return (
     <Layout variant="authenticated">
       <main className="profile-page-container">
@@ -18,20 +20,31 @@ function Profile() {
           <div className="profile-avatar-large">💼</div>
           <div className="profile-meta">
             <span className="profile-badge">HIRER PROFILE</span>
-            <h1>{auth.user?.name || "Alex Vance"}</h1>
-            <p className="headline">{auth.user?.headline || "Engineering Lead & Talent Scout"}</p>
-            <p className="about">
-              Hiring top software engineering candidates based on demonstrated skill proof and real-world challenge execution.
-            </p>
-
-            <div className="profile-actions-bar">
-              <a href="/hirer/dashboard" className="primary-action-btn sm-btn">
-                Hirer Dashboard &rarr;
-              </a>
-              <a href="/hirer/opportunities/new" className="secondary-btn">
-                + Create Opportunity
-              </a>
-            </div>
+            {hasProfile ? (
+              <>
+                <h1>{auth.user.name}</h1>
+                {auth.user.headline && <p className="headline">{auth.user.headline}</p>}
+                {auth.user.about && <p className="about">{auth.user.about}</p>}
+                <div className="profile-actions-bar">
+                  <a href="/hirer/dashboard" className="primary-action-btn sm-btn">
+                    Hirer Dashboard &rarr;
+                  </a>
+                  <a href="/hirer/opportunities/new" className="secondary-btn">
+                    + Create Opportunity
+                  </a>
+                </div>
+              </>
+            ) : (
+              <>
+                <h1>Your profile isn't complete yet.</h1>
+                <p className="about">Complete your hirer profile to start creating opportunities and finding talent.</p>
+                <div className="profile-actions-bar">
+                  <a href="/hirer/setup" className="primary-action-btn sm-btn">
+                    Complete Profile &rarr;
+                  </a>
+                </div>
+              </>
+            )}
           </div>
         </section>
       </main>

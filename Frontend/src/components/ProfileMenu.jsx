@@ -64,7 +64,7 @@ function ProfileMenu() {
       {open && (
         <div className="profile-dropdown-menu">
           <div className="profile-dropdown-header">
-            <span className="profile-dropdown-name">{auth.user?.name || "Demo User"}</span>
+            <span className="profile-dropdown-name">{auth.user?.name || "User Account"}</span>
             <span className="profile-dropdown-role">
               {isCandidate ? "Candidate Account" : "Hirer Account"}
             </span>

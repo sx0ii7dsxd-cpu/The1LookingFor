@@ -6,10 +6,10 @@ import "./HirerSetup.css";
 function HirerSetup() {
   const [formData, setFormData] = useState({
     hiringFor: "My company / organization",
-    name: "Alex Vance",
-    role: "Engineering Director",
-    organization: "Vance Technologies / Tech Lead",
-    about: "Hiring self-driven engineers based on real code execution and problem-solving ability.",
+    name: "",
+    role: "",
+    organization: "",
+    about: "",
   });
 
   const handleSubmit = (e) => {
@@ -19,7 +19,8 @@ function HirerSetup() {
       role: "hirer",
       user: {
         name: formData.name,
-        headline: `${formData.role} at ${formData.organization || "Personal Project"}`,
+        headline: formData.role ? `${formData.role}${formData.organization ? ` at ${formData.organization}` : ""}` : "",
+        about: formData.about,
       },
     });
     window.history.pushState({}, "", "/hirer/dashboard");
@@ -53,6 +54,7 @@ function HirerSetup() {
               <label>Your Name</label>
               <input
                 type="text"
+                placeholder="Enter your full name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -64,7 +66,7 @@ function HirerSetup() {
                 <label>Your Title / Position</label>
                 <input
                   type="text"
-                  placeholder="e.g. Lead Developer, Founder, YouTuber"
+                  placeholder="e.g. Lead Developer, Founder, Hiring Lead"
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                   required
@@ -86,6 +88,7 @@ function HirerSetup() {
               <label>About What You Need</label>
               <textarea
                 rows="4"
+                placeholder="Describe what skills you are looking for..."
                 value={formData.about}
                 onChange={(e) => setFormData({ ...formData, about: e.target.value })}
               />

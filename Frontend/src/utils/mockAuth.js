@@ -35,9 +35,9 @@ export const loginMock = (email, role = null) => {
     isAuthenticated: true,
     role: role || getMockAuth().role || "candidate",
     user: {
-      name: email ? email.split("@")[0] : "Demo User",
-      email: email || "demo@the1lookingfor.com",
-      headline: role === "hirer" ? "Talent Scout & Hiring Lead" : "Full Stack Developer",
+      name: email ? email.split("@")[0] : "",
+      email: email || "",
+      headline: "",
     },
   });
 };

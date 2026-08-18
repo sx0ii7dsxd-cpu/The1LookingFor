@@ -10,40 +10,7 @@ function DiscoverTalent() {
     experience: "Any",
   });
 
-  const candidatesList = [
-    {
-      id: "1",
-      name: "Rahul Sharma",
-      headline: "Java Backend Developer",
-      proofScore: "92%",
-      skills: ["Java", "Spring Boot", "SQL", "REST APIs"],
-      passedChallenges: ["Java Backend", "Debugging", "API Design"],
-    },
-    {
-      id: "2",
-      name: "Priya Patel",
-      headline: "Distributed Systems & Java Lead",
-      proofScore: "95%",
-      skills: ["Java", "Distributed Systems", "Redis", "Kafka"],
-      passedChallenges: ["System Design", "High-Throughput API", "Indexing"],
-    },
-    {
-      id: "3",
-      name: "Amit Kumar",
-      headline: "Full Stack Java & Microservices Engineer",
-      proofScore: "89%",
-      skills: ["Java", "Microservices", "PostgreSQL", "Docker"],
-      passedChallenges: ["Java Backend", "System Refactoring"],
-    },
-    {
-      id: "4",
-      name: "Neha Gupta",
-      headline: "Backend & Performance Optimization Specialist",
-      proofScore: "94%",
-      skills: ["Java", "Query Tuning", "Spring", "System Design"],
-      passedChallenges: ["Query Optimization", "Production Debugging", "Java API"],
-    },
-  ];
+
 
   return (
     <Layout variant="authenticated">
@@ -108,42 +75,14 @@ function DiscoverTalent() {
           </div>
         </section>
 
-        {/* Candidate Cards Grid */}
+        {/* Empty Candidates State */}
         <section className="discover-grid">
-          {candidatesList.map((cand) => (
-            <article key={cand.id} className="talent-card">
-              <div className="talent-card-head">
-                <div>
-                  <h3>{cand.name}</h3>
-                  <p className="talent-headline">{cand.headline}</p>
-                </div>
-                <span className="talent-proof-badge">⚡ {cand.proofScore} Proof</span>
-              </div>
-
-              <div className="talent-skills">
-                {cand.skills.map((s, idx) => (
-                  <span key={idx} className="skill-chip">
-                    ✓ {s}
-                  </span>
-                ))}
-              </div>
-
-              <div className="verified-challenges-preview">
-                <span className="lbl">Verified Challenges:</span>
-                <ul>
-                  {cand.passedChallenges.map((ch, idx) => (
-                    <li key={idx}>✓ {ch}</li>
-                  ))}
-                </ul>
-              </div>
-
-              <div className="talent-card-foot">
-                <a href={`/hirer/candidates/${cand.id}`} className="primary-action-btn sm-btn">
-                  VIEW FULL PROOF MATRIX &rarr;
-                </a>
-              </div>
-            </article>
-          ))}
+          <article className="filter-bar-card" style={{ width: "100%", gridColumn: "1 / -1", textAlign: "center", padding: "40px 20px" }}>
+            <h3 style={{ fontSize: "1.2rem", marginBottom: "8px" }}>No candidates found yet.</h3>
+            <p style={{ color: "var(--text-muted, #a0aec0)" }}>
+              Candidates will appear here once people create profiles and build their Skill DNA.
+            </p>
+          </article>
         </section>
       </main>
     </Layout>

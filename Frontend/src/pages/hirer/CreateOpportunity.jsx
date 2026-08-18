@@ -9,7 +9,7 @@ function CreateOpportunity() {
     skills: "",
     type: "Full-Time",
     budget: "",
-    challenge: "Java Backend API Challenge",
+    challenge: "",
   });
 
   const handleSubmit = (e) => {
@@ -93,10 +93,11 @@ function CreateOpportunity() {
                 value={formData.challenge}
                 onChange={(e) => setFormData({ ...formData, challenge: e.target.value })}
               >
-                <option>Java Backend API Challenge</option>
-                <option>Database Query Optimization</option>
-                <option>Practical System Refactoring</option>
-                <option>Custom Challenge</option>
+                <option value="">Select a challenge (optional)</option>
+                <option value="1">Java Backend API Challenge</option>
+                <option value="2">Database Query Optimization</option>
+                <option value="3">Practical System Refactoring</option>
+                <option value="custom">Custom Challenge</option>
               </select>
             </div>
 

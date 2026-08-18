@@ -5,12 +5,12 @@ import "./CandidateSetup.css";
 
 function CandidateSetup() {
   const [formData, setFormData] = useState({
-    name: "Siddharth Sharma",
-    headline: "Backend Engineer & Problem Solver",
-    about: "Passionate developer focused on building scalable systems, high-performance APIs, and solving core algorithmic challenges.",
-    skills: "Java, Spring Boot, System Design, SQL, Problem Solving",
-    experience: "Intermediate (2-4 yrs)",
-    portfolio: "github.com/siddharth-dev",
+    name: "",
+    headline: "",
+    about: "",
+    skills: "",
+    experience: "Fresher (0-1 yrs)",
+    portfolio: "",
   });
 
   const handleSubmit = (e) => {
@@ -21,7 +21,10 @@ function CandidateSetup() {
       user: {
         name: formData.name,
         headline: formData.headline,
-        skills: formData.skills.split(",").map((s) => s.trim()),
+        about: formData.about,
+        skills: formData.skills ? formData.skills.split(",").map((s) => s.trim()).filter(Boolean) : [],
+        experience: formData.experience,
+        portfolio: formData.portfolio,
       },
     });
     window.history.pushState({}, "", "/candidate/dashboard");
@@ -43,6 +46,7 @@ function CandidateSetup() {
               <label>Full Name</label>
               <input
                 type="text"
+                placeholder="Enter your full name"
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
@@ -50,10 +54,10 @@ function CandidateSetup() {
             </div>
 
             <div className="form-group">
-              <label>Professional Headline</label>
+              <label>Headline</label>
               <input
                 type="text"
-                placeholder="e.g. Backend Engineer, Systems Designer"
+                placeholder="e.g. Backend Developer"
                 value={formData.headline}
                 onChange={(e) => setFormData({ ...formData, headline: e.target.value })}
                 required
@@ -61,18 +65,20 @@ function CandidateSetup() {
             </div>
 
             <div className="form-group">
-              <label>About Your Thinking & Strengths</label>
+              <label>About</label>
               <textarea
                 rows="4"
+                placeholder="Tell us what you can do..."
                 value={formData.about}
                 onChange={(e) => setFormData({ ...formData, about: e.target.value })}
               />
             </div>
 
             <div className="form-group">
-              <label>Primary Skills (Comma separated)</label>
+              <label>Skills</label>
               <input
                 type="text"
+                placeholder="Add your skills..."
                 value={formData.skills}
                 onChange={(e) => setFormData({ ...formData, skills: e.target.value })}
                 required
@@ -93,9 +99,10 @@ function CandidateSetup() {
               </div>
 
               <div className="form-group">
-                <label>GitHub / Portfolio Link</label>
+                <label>Portfolio</label>
                 <input
                   type="text"
+                  placeholder="Optional (e.g. github.com/username)"
                   value={formData.portfolio}
                   onChange={(e) => setFormData({ ...formData, portfolio: e.target.value })}
                 />
