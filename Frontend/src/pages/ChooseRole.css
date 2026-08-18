@@ -78,6 +78,7 @@
     backdrop-filter: blur(12px);
 
     color: var(--text);
+    text-decoration: none;
     cursor: pointer;
 
     transition:

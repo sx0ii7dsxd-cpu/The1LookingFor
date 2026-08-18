@@ -39,6 +39,7 @@ body {
 
 
 
+
 .container {
     position: relative;
     display: flex;
@@ -95,6 +96,8 @@ body {
 }
 
 .button1 {
+    display: inline-block;
+    text-decoration: none;
     padding: 15px 24px;
     font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
     font-size: 0.98rem;
@@ -104,7 +107,7 @@ body {
     color: var(--text);
     background: linear-gradient(135deg, var(--primary), #030303);
 
-    border-radius: 0;
+    border-radius: 1;
     box-shadow: linear-gradient(135deg, var(--primary), #030303);
     cursor: pointer;
     transition:

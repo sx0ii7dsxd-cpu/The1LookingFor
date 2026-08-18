@@ -3,7 +3,13 @@ import Layout from "../components/Layout";
 import "./Auth.css";
 
 function Auth() {
-  const [isSignUp, setIsSignUp] = useState(false);
+  const [isSignUp, setIsSignUp] = useState(window.location.pathname === "/join");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    window.history.pushState({}, "", "/choose-role");
+    window.dispatchEvent(new Event("popstate"));
+  };
 
   return (
     <Layout>
@@ -22,7 +28,7 @@ function Auth() {
                 ? "Join The1LookingFor to showcase your real skills."
                 : "Sign in to continue to The1LookingFor."}
             </p>
-            <form className="auth-form" onSubmit={(e) => e.preventDefault()}>
+            <form className="auth-form" onSubmit={handleSubmit}>
               {isSignUp && (
                 <div className="input-group">
                   <label htmlFor="name">Full Name</label>

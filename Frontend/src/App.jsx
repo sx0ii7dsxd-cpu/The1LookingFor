@@ -9,7 +9,9 @@ function App() {
         <h2 className="heading">
           We hire people for their THINKING, not their HISTORY
         </h2>
-        <button className="button1">Join "The1LookingFor"</button>
+        <a href="/join" className="button1">
+          Join "The1LookingFor"
+        </a>
         <section className="benifits">
           <h2>Why Join Us?</h2>
           <ul>

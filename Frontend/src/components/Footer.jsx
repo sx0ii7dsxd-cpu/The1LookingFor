@@ -19,12 +19,6 @@ function Footer() {
                 <li>
                   <a href="/#how-we-work">How It Works</a>
                 </li>
-                <li>
-                  <a href="/#challenges">Challenges</a>
-                </li>
-                <li>
-                  <a href="/#skill-dna">Skill DNA</a>
-                </li>
               </ul>
             </div>
 
@@ -32,28 +26,7 @@ function Footer() {
               <h4>Candidates</h4>
               <ul>
                 <li>
-                  <a href="/join">Create Profile</a>
-                </li>
-                <li>
-                  <a href="/#opportunities">Find Opportunities</a>
-                </li>
-                <li>
-                  <a href="/#showcase">Showcase Skills</a>
-                </li>
-              </ul>
-            </div>
-
-            <div className="site-footer-col" id="employers">
-              <h4>Employers</h4>
-              <ul>
-                <li>
-                  <a href="/#talent">Discover Talent</a>
-                </li>
-                <li>
-                  <a href="/#create-challenges">Create Challenges</a>
-                </li>
-                <li>
-                  <a href="/#hire">Hire by Skills</a>
+                  <a href="/join">Create Profile</a>  
                 </li>
               </ul>
             </div>

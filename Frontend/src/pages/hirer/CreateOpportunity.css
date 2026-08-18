@@ -1,0 +1,5 @@
+@import "../candidate/CandidateSetup.css";
+
+.wide-card {
+    max-width: 780px;
+}

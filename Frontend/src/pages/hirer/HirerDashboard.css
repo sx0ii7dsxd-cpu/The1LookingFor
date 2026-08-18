@@ -1,0 +1,156 @@
+.hirer-dashboard-container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+    width: 100%;
+}
+
+.hirer-dash-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 44px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.hirer-tag {
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.hirer-dash-header h1 {
+    margin: 8px 0 4px;
+    font-size: 2.5rem;
+    color: var(--text);
+}
+
+.hirer-dash-header p {
+    margin: 0;
+    color: var(--muted);
+    font-size: 1.05rem;
+}
+
+.dash-actions {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.hirer-section {
+    margin-bottom: 48px;
+}
+
+.opportunities-grid,
+.candidate-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.opp-card,
+.cand-proof-card {
+    padding: 26px;
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    background: var(--panel);
+    backdrop-filter: blur(12px);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 180ms ease, border-color 180ms ease;
+}
+
+.opp-card:hover,
+.cand-proof-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(23, 232, 143, 0.35);
+}
+
+.opp-top {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.status-pill {
+    font-size: 0.74rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.06em;
+}
+
+.status-pill.active {
+    background: rgba(23, 232, 143, 0.12);
+    color: var(--primary);
+    border: 1px solid rgba(23, 232, 143, 0.3);
+}
+
+.status-pill.draft {
+    background: rgba(134, 167, 208, 0.12);
+    color: var(--muted);
+    border: 1px solid var(--border);
+}
+
+.type-lbl {
+    font-size: 0.8rem;
+    color: var(--muted);
+}
+
+.opp-card h3 {
+    margin: 0 0 10px;
+    font-size: 1.2rem;
+    color: var(--text);
+}
+
+.cand-count {
+    margin: 0 0 20px;
+    font-size: 0.9rem;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+.cand-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 14px;
+}
+
+.cand-head h4 {
+    margin: 0;
+    font-size: 1.15rem;
+    color: var(--text);
+}
+
+.cand-role {
+    font-size: 0.84rem;
+    color: var(--muted);
+}
+
+.proof-score {
+    font-size: 0.88rem;
+    font-weight: 800;
+    color: var(--primary);
+    background: rgba(23, 232, 143, 0.1);
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.cand-skills {
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin: 0 0 20px;
+}
+
+@media (max-width: 900px) {
+    .opportunities-grid,
+    .candidate-cards-grid {
+        grid-template-columns: 1fr;
+    }
+}

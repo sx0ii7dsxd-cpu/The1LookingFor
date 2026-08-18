@@ -17,7 +17,7 @@ function ChooseRole() {
                     </p>
                     <div className="role-options">
 
-                        <button className="role-card">
+                        <a href="/join" className="role-card">
                             <span className="role-number">01</span>
                             <div>
                                 <h2> I'm looking for opportunities</h2>
@@ -27,8 +27,8 @@ function ChooseRole() {
                                 </p>
                             </div>
                             <span className="role-arrow">&rarr;</span>
-                        </button>
-                        <button className="role-card">
+                        </a>
+                        <a href="/join" className="role-card">
                             <span className="role-number">02</span>
                             <div>
                                 <h2>
@@ -40,7 +40,7 @@ function ChooseRole() {
                                 </p>
                             </div>
                             <span className="role-arrow">&rarr;</span>
-                        </button>
+                        </a>
                     </div>
                 </section>
             </main>
