@@ -1,52 +1,9 @@
-import { useState } from "react";
+import Layout from "./components/Layout";
 import "./App.css";
 
 function App() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
   return (
-    <div className="site-wrapper">
-      <header className="site-header">
-        <div className="site-header-inner">
-          <a href="#" className="site-logo">
-            THE1LOOKINGFOR
-          </a>
-
-          <nav className={`site-nav ${mobileMenuOpen ? "nav-open" : ""}`}>
-            <a href="#how-we-work" onClick={() => setMobileMenuOpen(false)}>
-              How It Works
-            </a>
-            <a href="#why-the1lookingfor" onClick={() => setMobileMenuOpen(false)}>
-              Why The1LookingFor
-            </a>
-            <a href="#candidates" onClick={() => setMobileMenuOpen(false)}>
-              For Candidates
-            </a>
-            <a href="#employers" onClick={() => setMobileMenuOpen(false)}>
-              For Employers
-            </a>
-          </nav>
-
-          <div className="site-header-actions">
-            <a href="#signin" className="btn-signin">
-              Sign In
-            </a>
-            <a href="#join" className="btn-join">
-              Join The1LookingFor
-            </a>
-            <button
-              className="mobile-menu-btn"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
-            >
-              <span className="hamburger-line"></span>
-              <span className="hamburger-line"></span>
-              <span className="hamburger-line"></span>
-            </button>
-          </div>
-        </div>
-      </header>
-
+    <Layout>
       <main className="container">
         <h2 className="label">The1LookingFor</h2>
         <h2 className="heading">
@@ -209,71 +166,7 @@ function App() {
           </div>
         </section>
       </main>
-
-      <footer className="site-footer">
-        <div className="site-footer-inner">
-          <div className="site-footer-top">
-            <div className="site-footer-brand">
-              <div className="site-footer-logo">THE1LOOKINGFOR</div>
-              <p className="site-footer-tagline">
-                "Your skills should speak for themselves."
-              </p>
-            </div>
-
-            <div className="site-footer-cols">
-              <div className="site-footer-col">
-                <h4>Platform</h4>
-                <ul>
-                  <li>
-                    <a href="#how-we-work">How It Works</a>
-                  </li>
-                  <li>
-                    <a href="#challenges">Challenges</a>
-                  </li>
-                  <li>
-                    <a href="#skill-dna">Skill DNA</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="site-footer-col" id="candidates">
-                <h4>Candidates</h4>
-                <ul>
-                  <li>
-                    <a href="#profile">Create Profile</a>
-                  </li>
-                  <li>
-                    <a href="#opportunities">Find Opportunities</a>
-                  </li>
-                  <li>
-                    <a href="#showcase">Showcase Skills</a>
-                  </li>
-                </ul>
-              </div>
-
-              <div className="site-footer-col" id="employers">
-                <h4>Employers</h4>
-                <ul>
-                  <li>
-                    <a href="#talent">Discover Talent</a>
-                  </li>
-                  <li>
-                    <a href="#create-challenges">Create Challenges</a>
-                  </li>
-                  <li>
-                    <a href="#hire">Hire by Skills</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          <div className="site-footer-bottom">
-            <p>© 2026 The1LookingFor. Built around skills, not history.</p>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Layout>
   );
 }
 
